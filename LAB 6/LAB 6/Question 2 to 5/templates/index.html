@@ -1,0 +1,65 @@
+<html>
+   <style>
+      .container{
+         display: flex;
+         min-height: 90vh;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+      }
+      #content{
+         padding: 1rem;
+         border: 2px solid black;
+         border-radius: 5%;
+         box-shadow: inset;
+      }
+      label{
+         margin-left: 1rem;
+         padding: 4px;
+         width: fit-content;
+         color: gray;
+      }
+      input{
+         margin: 1rem;
+         font-size: larger;
+         display: flex;
+         flex-direction: column;
+      }
+      .button{
+         border-radius: 5px;
+         width: fit-content;
+         border: 2px solid rgb(70, 20, 95);
+         color: white;
+         background-color: rgb(82, 31, 137);
+      }
+      .button:hover{
+         color: rgb(119, 27, 153);
+         background-color: white;
+      }
+   </style>
+   <body>
+      <div class="container">
+         <form id='content' action="http://localhost:8000/uploader" method="POST" enctype="multipart/form-data">
+            <div class="input">
+               <label for="text">UPLOAD TEXT FILE</label>
+               <input type="file" name="file1" /> 
+            </div>
+            <br>
+            <div class="input">
+               <label for="csv">UPLOAD CSV REFERENCE FILE</label>
+               <input type="file" name="file2" /> 
+            </div>
+            <br>
+            <div>
+               <input class="button" type="submit"/>
+            </div>
+         </form>
+         <br>
+         <div id="download">
+            <button type="submit">
+            
+            </button>
+         </div>
+      </div>
+   </body>
+</html>

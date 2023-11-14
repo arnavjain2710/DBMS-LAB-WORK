@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>User Registration</h2>
+        <form id="registrationForm" method="POST">
+            <div class="form-group">
+                <label for="userId">User ID:</label>
+                <input type="text" id="userId" name="userId" required>
+            </div>
+            <div class="form-group">
+                <label for="userPassword">User Password:</label>
+                <input type="password" id="userPassword" name="userPassword" required>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+        <div id="alertMessage" class="alert"></div>
+    </div>
+
+    <script>
+        const registrationForm = document.getElementById('registrationForm');
+        const alertMessage = document.getElementById('alertMessage');
+
+        registrationForm.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(registrationForm);
+            const response = await fetch('/', {
+                method: 'POST',
+                body: formData,
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                if (data.message === 'success') {
+                    alertMessage.textContent = `Welcome, ${data.username}! Registration successful.`;
+                    alertMessage.classList.add('alert-success');
+                } else {
+                    alertMessage.textContent = 'Registration failed.';
+                    alertMessage.classList.add('alert-danger');
+                }
+            } else {
+                alertMessage.textContent = 'Server error. Registration failed.';
+                alertMessage.classList.add('alert-danger');
+            }
+        });
+    </script>
+</body>
+</html>

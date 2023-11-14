@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to IIT Indore</h1>
+        <p>The following are the courses offered at IIT Indore to 2nd year CSE students:</p>
+        <table class="course-table">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>Course Name</th>
+                    <th>Credits</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Database and Information Systems</td>
+                    <td>3.0</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Data Structures and Algorithms</td>
+                    <td>3.0</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Discrete Mathematical Structures</td>
+                    <td>3.0</td>
+                </tr>
+            </tbody>
+        </table>
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="IIT Indore Logo">
+    </div>
+</body>
+</html>

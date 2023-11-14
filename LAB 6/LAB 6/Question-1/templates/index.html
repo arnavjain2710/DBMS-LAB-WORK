@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Sentiment Analysis</h1>
+    <form action="/analyze" method="POST">
+        <textarea name="text" rows="4" cols="50" placeholder="Enter text here..."></textarea>
+        <br>
+        <input type="submit" value="Analyze">
+    </form>
+</body>
+</html>
+
+

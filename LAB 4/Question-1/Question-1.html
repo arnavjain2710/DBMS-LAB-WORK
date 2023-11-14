@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f4f4f4;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>User Registration</h2>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="userId">User ID:</label>
+                <input type="text" id="userId" name="userId" required>
+            </div>
+            <div class="form-group">
+                <label for="userPassword">User Password:</label>
+                <input type="password" id="userPassword" name="userPassword" required>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        const registrationForm = document.getElementById('registrationForm');
+
+        registrationForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Retrieve user input
+            const userId = document.getElementById('userId').value;
+            const userPassword = document.getElementById('userPassword').value;
+
+            // You can add more complex validation logic here
+            if (userId.trim() === '' || userPassword.trim() === '') {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // Simulate registration (replace with your actual registration code)
+            alert('Registration successful!\nUser ID: ' + userId);
+
+            // Clear the form
+            registrationForm.reset();
+        });
+    </script>
+</body>
+</html>
